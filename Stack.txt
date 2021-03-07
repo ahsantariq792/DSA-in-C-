@@ -1,0 +1,58 @@
+#include <stdlib.h>
+#include <limits.h>
+#include <conio.h>
+#include <cstdio>
+
+#define MAX 2
+int stack[MAX];
+int top = -1;
+void push(int element);
+int  pop();
+
+
+int main()
+{
+	push(3);
+	push(5);
+	push(6);
+
+
+	int z = pop();
+	printf("\nremoved %d", z);
+	z = pop();
+	printf("\nremoved %d", z);
+	z = pop();
+	printf("\nremoved %d", z);
+
+	_getch();
+}
+
+
+
+
+void push(int element)
+{
+	
+	if (top == MAX - 1)
+	{
+		printf("StackOverflow,cant add more elementto stack.\n ");
+		return;
+	}
+	top++;
+	stack[top] = element;
+	printf("Data pushed to stack %d .\n ", element);
+}
+
+
+
+int pop()
+{
+	if (top == -1) 
+	{
+		printf("\nStack is empty.\n");
+		return INT_MIN;
+	}
+	int item = stack[top];
+	top--;
+	return item;
+}

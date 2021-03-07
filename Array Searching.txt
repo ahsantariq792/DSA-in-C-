@@ -1,0 +1,28 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int main()
+{
+	int arr[50], size, element, loc;
+	cout << "Enter the size of the array" << endl;
+	cin >> size;
+	cout << "Fill the array" << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cin >> arr[i];
+	}
+	cout << "Enter the element you want to search" << endl;
+	cin >> element;
+	arr[size] = element;
+	loc = 0;
+	while (arr[loc] != element)
+	{
+		loc++;
+	}
+	if (loc == size)
+	{
+		loc = -1;
+	}
+	cout << loc << endl;
+	_getch();
+}

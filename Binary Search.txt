@@ -1,0 +1,35 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int binsearch(int lb, int ub, int arr[], int item)
+{
+	int loc;
+	int beg = lb;
+	int end = ub;
+	int mid = beg + end / 2;
+	while (beg <= end && arr[mid] != item)
+	{
+		if (item < arr[mid])
+		{
+			end = mid - 1;
+		}
+		else
+			beg = mid + 1;
+		mid = beg + end / 2;
+	}
+	if (arr[mid] == item)
+		loc = mid;
+	else
+		loc = NULL;
+	return loc;
+
+}
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	int n = sizeof(arr) - 1;
+	cout << binsearch(0, n, arr, 5) << endl;
+	_getch();
+
+}
+	

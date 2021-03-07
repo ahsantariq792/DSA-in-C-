@@ -1,0 +1,8 @@
+Begin
+Fib(n)
+If(n<=1) then 
+ Return n
+Else
+ Return fib(n-1) +fib(n-2)
+End if
+End
